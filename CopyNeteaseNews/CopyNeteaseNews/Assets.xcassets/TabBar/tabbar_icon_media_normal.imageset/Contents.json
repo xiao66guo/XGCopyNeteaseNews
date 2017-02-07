@@ -11,7 +11,8 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "tabbar_icon_media_normal@3x.png"
     }
   ],
   "info" : {
