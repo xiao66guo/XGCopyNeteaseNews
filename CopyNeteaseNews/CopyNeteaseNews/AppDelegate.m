@@ -16,6 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self setupApperance];
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _window.backgroundColor = [UIColor whiteColor];
@@ -28,6 +29,15 @@
     [_window makeKeyAndVisible];
     
     return YES;
+}
+
+#pragma mark - 设置外观 apperance 是一个协议，通常用来设置控件的全局的外观
+/*
+    从 iOS 5 开始，Apple 通过 UIApperance 协议规范了对许多 UIKit 控件定制的支持，所有遵循 UIApperance 的协议的控件通过定制都可以呈现各种外观，所以设置外观的动作要尽可能的早，通常设置外观的代码会出现在 APPDelegate 中
+ */
+- (void)setupApperance {
+    // 设置 tabbar 的渲染的颜色  - 在后续的外观设置之后，UITabBar 的 tintColor 全部是指定的颜色
+    [UITabBar appearance].tintColor = [UIColor xg_colorWithHex:0xDF0000];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -23,7 +23,7 @@
 #pragma mark - 添加子控制器
 - (void)addChildViewControllers {
     // 设置tabbar字体颜色
-    self.tabBar.tintColor = [UIColor xg_colorWithHex:0xDF0000];
+//    self.tabBar.tintColor = [UIColor xg_colorWithHex:0xDF0000];
     
     NSArray *array = @[@{@"clsName":@"UIViewController",@"title":@"新闻",@"imageName":@"news"},
                        @{@"clsName":@"UIViewController",@"title":@"阅读",@"imageName":@"reader"},
