@@ -8,8 +8,6 @@
 
 #import "XGNewsListController.h"
 #import "XGNewsListItem.h"
-#import "XGNewsNormalCell.h"
-#import "XGNewsExtraCell.h"
 #import "XGNewsCell.h"
 #import <UIImageView+WebCache.h>
 
