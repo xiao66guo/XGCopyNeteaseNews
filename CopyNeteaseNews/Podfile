@@ -1,0 +1,11 @@
+# platform :ios, '8.0'
+
+target 'CopyNeteaseNews' do
+
+pod 'AFNetworking'
+pod 'SDWebImage'
+pod 'Masonry'
+pod 'FMDB'
+pod 'YYModel'
+
+end
