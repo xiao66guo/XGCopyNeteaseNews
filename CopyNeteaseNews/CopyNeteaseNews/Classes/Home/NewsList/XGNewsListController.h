@@ -1,5 +1,5 @@
 //
-//  XGHomeViewController.h
+//  XGNewsListController.h
 //  CopyNeteaseNews
 //
 //  Created by 小果 on 2017/2/7.
@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 /**
- *  首页控制器采用 UIScrollView + UIPageController 来进行设置
+ *  该控制器用来显示每一个频道的新闻列表
  */
-@interface XGHomeViewController : UIViewController
+@interface XGNewsListController : UIViewController
 
 @end

@@ -17,6 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    
+    self.view.backgroundColor = [UIColor xg_randomColor];
 }
 @end

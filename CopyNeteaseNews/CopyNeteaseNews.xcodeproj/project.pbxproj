@@ -27,6 +27,7 @@
 		DB2738251E49DF5200753186 /* UIViewController+XGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2738171E49DF5200753186 /* UIViewController+XGExtension.m */; };
 		DB27382B1E49E07F00753186 /* XGMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27382A1E49E07F00753186 /* XGMainController.m */; };
 		DB27382E1E49E0AF00753186 /* XGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27382D1E49E0AF00753186 /* XGHomeViewController.m */; };
+		DBCE16191E4A07C3009D371C /* XGNewsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE16181E4A07C3009D371C /* XGNewsListController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,8 @@
 		DB27382C1E49E0AF00753186 /* XGHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGHomeViewController.h; sourceTree = "<group>"; };
 		DB27382D1E49E0AF00753186 /* XGHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGHomeViewController.m; sourceTree = "<group>"; };
 		DB6311591E49E910004E68C5 /* NeteaseNews.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NeteaseNews.pch; sourceTree = "<group>"; };
+		DBCE16171E4A07C3009D371C /* XGNewsListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGNewsListController.h; sourceTree = "<group>"; };
+		DBCE16181E4A07C3009D371C /* XGNewsListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGNewsListController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +151,8 @@
 		DB2737F91E49DF4C00753186 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DB2737FA1E49DF4C00753186 /* Home */,
 				DB2737FB1E49DF4C00753186 /* Main */,
+				DB2737FA1E49DF4C00753186 /* Home */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -157,6 +160,8 @@
 		DB2737FA1E49DF4C00753186 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DBCE16161E4A06BF009D371C /* NewsList */,
+				DBCE16151E4A06BF009D371C /* NewsDetail */,
 				DB27382C1E49E0AF00753186 /* XGHomeViewController.h */,
 				DB27382D1E49E0AF00753186 /* XGHomeViewController.m */,
 			);
@@ -212,6 +217,22 @@
 				DB2738181E49DF5200753186 /* XGExtension.h */,
 			);
 			path = XGExtension;
+			sourceTree = "<group>";
+		};
+		DBCE16151E4A06BF009D371C /* NewsDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewsDetail;
+			sourceTree = "<group>";
+		};
+		DBCE16161E4A06BF009D371C /* NewsList */ = {
+			isa = PBXGroup;
+			children = (
+				DBCE16171E4A07C3009D371C /* XGNewsListController.h */,
+				DBCE16181E4A07C3009D371C /* XGNewsListController.m */,
+			);
+			path = NewsList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +359,7 @@
 				DB2738201E49DF5200753186 /* UIColor+XGExtension.m in Sources */,
 				DB2738221E49DF5200753186 /* UILabel+XGExtension.m in Sources */,
 				DB2738211E49DF5200753186 /* UIImage+XGExtension.m in Sources */,
+				DBCE16191E4A07C3009D371C /* XGNewsListController.m in Sources */,
 				DB2738251E49DF5200753186 /* UIViewController+XGExtension.m in Sources */,
 				DB27381A1E49DF5200753186 /* NSAttributedString+XGExtension.m in Sources */,
 				DB27382B1E49E07F00753186 /* XGMainController.m in Sources */,
