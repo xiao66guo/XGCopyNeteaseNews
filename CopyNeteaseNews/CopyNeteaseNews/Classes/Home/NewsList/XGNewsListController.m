@@ -10,9 +10,11 @@
 #import "XGNewsListItem.h"
 #import "XGNewsNormalCell.h"
 #import "XGNewsExtraCell.h"
+#import "XGNewsCell.h"
 #import <UIImageView+WebCache.h>
 
-static NSString *cellID = @"listCell";
+static NSString *normalCellID = @"normalListCell";
+static NSString *extraCellID = @"extraListCell";
 
 @interface XGNewsListController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) UITableView *tableView;
@@ -35,7 +37,7 @@ static NSString *cellID = @"listCell";
 #pragma mark - 加载数据
 - (void)loadData {
     [[XGNetworkManager shareManager] newsListWithChannel:@"T1348649079062" start:0 completion:^(NSArray *array, NSError *error) {
-        NSLog(@"%@", array);
+//        NSLog(@"%@", array);
         
         // 字典转模型
         NSArray *list = [NSArray yy_modelArrayWithClass:[XGNewsListItem class] json:array];
@@ -59,9 +61,8 @@ static NSString *cellID = @"listCell";
     }];
     
     // 注册Cell
-//    [tab registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
-//    [tab registerNib:[UINib nibWithNibName:@"XGNewsNormalCell" bundle:nil] forCellReuseIdentifier:cellID];
-    [tab registerNib:[UINib nibWithNibName:@"XGNewsExtraCell" bundle:nil] forCellReuseIdentifier:cellID];
+    [tab registerNib:[UINib nibWithNibName:@"XGNewsNormalCell" bundle:nil] forCellReuseIdentifier:normalCellID];
+    [tab registerNib:[UINib nibWithNibName:@"XGNewsExtraCell" bundle:nil] forCellReuseIdentifier:extraCellID];
 
     
     // 设置自动行高
@@ -81,10 +82,15 @@ static NSString *cellID = @"listCell";
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    XGNewsExtraCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    // 根据模型来判断 CellID
+    XGNewsListItem *model = _newsList[indexPath.row];
+  
+    NSString *cellID = model.imgextra.count > 0 ? extraCellID : normalCellID;
+    
+    XGNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     
     // 取出模型并设置数据
-    XGNewsListItem *model = _newsList[indexPath.row];
+    
     
     cell.titleLab.text = model.title;
     cell.sourceLab.text = model.source;

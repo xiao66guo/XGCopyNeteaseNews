@@ -7,13 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XGNewsCell.h"
 
-@interface XGNewsNormalCell : UITableViewCell
+@interface XGNewsNormalCell : XGNewsCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *iconView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLab;
-
-@property (weak, nonatomic) IBOutlet UILabel *sourceLab;
-@property (weak, nonatomic) IBOutlet UILabel *replyLab;
 
 @end
