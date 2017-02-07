@@ -7,7 +7,7 @@
 //
 
 #import "XGNewsListController.h"
-
+#import "XGNetworkManager.h"
 static NSString *cellID = @"listCell";
 @interface XGNewsListController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) UITableView *tableView;
@@ -19,7 +19,14 @@ static NSString *cellID = @"listCell";
     [super viewDidLoad];
    
     [self setupUI];
-    
+    [self loadData];
+}
+
+#pragma mark - 加载数据
+- (void)loadData {
+    [[XGNetworkManager shareManager] newsListWithChannel:@"T1348649079062" start:0 completion:^(NSArray *array, NSError *error) {
+        NSLog(@"%@", array);
+    }];
 }
 
 #pragma mark - 设置界面

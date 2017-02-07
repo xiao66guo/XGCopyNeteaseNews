@@ -18,6 +18,9 @@
         NSURL *baseURL = [NSURL URLWithString:@"http://c.m.163.com/nc/article/"];
         
         instance = [[self alloc] initWithBaseURL:baseURL];
+        
+        // 设置响应的数据格式
+        instance.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
     });
     return instance;
 }
@@ -48,7 +51,10 @@
     NSString *urlString = [NSString stringWithFormat:@"list/%@/%zd-20.html",channel,start];
     
     [self GETRequest:urlString parameters:nil completion:^(id json, NSError *error) {
-        NSLog(@"%@",json);
+        // 使用频道作为 key 来获取数组
+        NSArray *array = json[channel];
+        
+        completion(array, error);
     }];
 }
 

@@ -11,5 +11,6 @@
 #import <Masonry.h>
 #import <NSObject+YYModel.h>
 #import "XGExtension.h"
+#import "XGNetworkManager.h"
 
 #endif
