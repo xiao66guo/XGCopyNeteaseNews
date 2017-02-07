@@ -10,4 +10,12 @@
 
 @interface XGNewsExtraCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *iconView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLab;
+
+@property (weak, nonatomic) IBOutlet UILabel *sourceLab;
+@property (weak, nonatomic) IBOutlet UILabel *replyLab;
+
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *extraIcon;
+
 @end

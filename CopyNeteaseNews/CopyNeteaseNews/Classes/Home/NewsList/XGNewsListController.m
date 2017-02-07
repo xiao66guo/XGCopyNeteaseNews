@@ -9,6 +9,7 @@
 #import "XGNewsListController.h"
 #import "XGNewsListItem.h"
 #import "XGNewsNormalCell.h"
+#import "XGNewsExtraCell.h"
 #import <UIImageView+WebCache.h>
 
 static NSString *cellID = @"listCell";
@@ -59,7 +60,9 @@ static NSString *cellID = @"listCell";
     
     // 注册Cell
 //    [tab registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
-    [tab registerNib:[UINib nibWithNibName:@"XGNewsNormalCell" bundle:nil] forCellReuseIdentifier:cellID];
+//    [tab registerNib:[UINib nibWithNibName:@"XGNewsNormalCell" bundle:nil] forCellReuseIdentifier:cellID];
+    [tab registerNib:[UINib nibWithNibName:@"XGNewsExtraCell" bundle:nil] forCellReuseIdentifier:cellID];
+
     
     // 设置自动行高
     tab.estimatedRowHeight = 100;
@@ -78,7 +81,7 @@ static NSString *cellID = @"listCell";
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    XGNewsNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    XGNewsExtraCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     
     // 取出模型并设置数据
     XGNewsListItem *model = _newsList[indexPath.row];
@@ -89,6 +92,15 @@ static NSString *cellID = @"listCell";
     
     NSURL *url = [NSURL URLWithString:model.imgsrc];
     [cell.iconView sd_setImageWithURL:url];
+    
+    // 设置多图cell（如果不是多图就不会进入这个循环）
+    NSInteger idnx = 0;
+    for (NSDictionary *dict in model.imgextra) {
+        // 获取 URL 的字符串
+        NSURL *url = [NSURL URLWithString:dict[@"imgsrc"]];
+        
+        [cell.extraIcon[idnx++] sd_setImageWithURL:url];
+    }
     
     return cell;
 }

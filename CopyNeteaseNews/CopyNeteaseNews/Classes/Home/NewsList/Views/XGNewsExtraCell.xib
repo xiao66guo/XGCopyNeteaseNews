@@ -73,6 +73,14 @@
                     <constraint firstItem="MOJ-UJ-dGU" firstAttribute="top" secondItem="GjG-WA-D37" secondAttribute="top" id="wxf-d9-iGT"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="iconView" destination="kWt-Z8-XcJ" id="P90-cP-cwp"/>
+                <outlet property="replyLab" destination="q6d-Cq-3Bf" id="MYa-sh-m08"/>
+                <outlet property="sourceLab" destination="K0c-eM-p80" id="dVE-5K-DfG"/>
+                <outlet property="titleLab" destination="8ej-2Z-76b" id="51s-F0-yqU"/>
+                <outletCollection property="extraIcon" destination="MOJ-UJ-dGU" id="Tps-56-kSx"/>
+                <outletCollection property="extraIcon" destination="GjG-WA-D37" id="Ft5-py-Cdh"/>
+            </connections>
             <point key="canvasLocation" x="302.5" y="328.5"/>
         </tableViewCell>
     </objects>
