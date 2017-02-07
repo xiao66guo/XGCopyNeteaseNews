@@ -29,6 +29,9 @@
 		DB27382E1E49E0AF00753186 /* XGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27382D1E49E0AF00753186 /* XGHomeViewController.m */; };
 		DBCE16191E4A07C3009D371C /* XGNewsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE16181E4A07C3009D371C /* XGNewsListController.m */; };
 		DBCE161D1E4A0F67009D371C /* XGNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE161C1E4A0F67009D371C /* XGNetworkManager.m */; };
+		DBCE16221E4A1763009D371C /* XGNewsListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE16211E4A1763009D371C /* XGNewsListItem.m */; };
+		DBCE16261E4A18D7009D371C /* XGNewsNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE16241E4A18D7009D371C /* XGNewsNormalCell.m */; };
+		DBCE16271E4A18D7009D371C /* XGNewsNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBCE16251E4A18D7009D371C /* XGNewsNormalCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,11 @@
 		DBCE16181E4A07C3009D371C /* XGNewsListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGNewsListController.m; sourceTree = "<group>"; };
 		DBCE161B1E4A0F67009D371C /* XGNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGNetworkManager.h; sourceTree = "<group>"; };
 		DBCE161C1E4A0F67009D371C /* XGNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGNetworkManager.m; sourceTree = "<group>"; };
+		DBCE16201E4A1763009D371C /* XGNewsListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGNewsListItem.h; sourceTree = "<group>"; };
+		DBCE16211E4A1763009D371C /* XGNewsListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGNewsListItem.m; sourceTree = "<group>"; };
+		DBCE16231E4A18D7009D371C /* XGNewsNormalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGNewsNormalCell.h; sourceTree = "<group>"; };
+		DBCE16241E4A18D7009D371C /* XGNewsNormalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGNewsNormalCell.m; sourceTree = "<group>"; };
+		DBCE16251E4A18D7009D371C /* XGNewsNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XGNewsNormalCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +241,8 @@
 		DBCE16161E4A06BF009D371C /* NewsList */ = {
 			isa = PBXGroup;
 			children = (
+				DBCE161F1E4A1744009D371C /* Views */,
+				DBCE161E1E4A1744009D371C /* Model */,
 				DBCE16171E4A07C3009D371C /* XGNewsListController.h */,
 				DBCE16181E4A07C3009D371C /* XGNewsListController.m */,
 			);
@@ -246,6 +256,25 @@
 				DBCE161C1E4A0F67009D371C /* XGNetworkManager.m */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		DBCE161E1E4A1744009D371C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DBCE16201E4A1763009D371C /* XGNewsListItem.h */,
+				DBCE16211E4A1763009D371C /* XGNewsListItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DBCE161F1E4A1744009D371C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DBCE16231E4A18D7009D371C /* XGNewsNormalCell.h */,
+				DBCE16241E4A18D7009D371C /* XGNewsNormalCell.m */,
+				DBCE16251E4A18D7009D371C /* XGNewsNormalCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB2737F21E49DCE200753186 /* LaunchScreen.storyboard in Resources */,
+				DBCE16271E4A18D7009D371C /* XGNewsNormalCell.xib in Resources */,
 				DB2737EF1E49DCE200753186 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,11 +406,13 @@
 				DBCE16191E4A07C3009D371C /* XGNewsListController.m in Sources */,
 				DB2738251E49DF5200753186 /* UIViewController+XGExtension.m in Sources */,
 				DBCE161D1E4A0F67009D371C /* XGNetworkManager.m in Sources */,
+				DBCE16221E4A1763009D371C /* XGNewsListItem.m in Sources */,
 				DB27381A1E49DF5200753186 /* NSAttributedString+XGExtension.m in Sources */,
 				DB27382B1E49E07F00753186 /* XGMainController.m in Sources */,
 				DB27381C1E49DF5200753186 /* NSString+XGBase64.m in Sources */,
 				DB2738191E49DF5200753186 /* NSArray+Log.m in Sources */,
 				DB27381E1E49DF5200753186 /* NSString+XGPath.m in Sources */,
+				DBCE16261E4A18D7009D371C /* XGNewsNormalCell.m in Sources */,
 				DB2738241E49DF5200753186 /* UIView+XGExtension.m in Sources */,
 				DB27381D1E49DF5200753186 /* NSString+XGHash.m in Sources */,
 				DB2738231E49DF5200753186 /* UIScreen+XGExtension.m in Sources */,
