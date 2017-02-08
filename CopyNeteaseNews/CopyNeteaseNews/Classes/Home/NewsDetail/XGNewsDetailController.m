@@ -16,14 +16,13 @@
 
 - (void)loadView {
     _webView = [UIWebView new];
-    
+    _webView.backgroundColor = [UIColor clearColor];
     self.view = _webView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    NSLog(@"接收到的模型：%@",_detailItem);
     [self loadData];
 }
 
@@ -34,10 +33,6 @@
         NSArray *img = dict[@"img"];
         NSArray *video = dict[@"video"];
         
-        NSLog(@"=====%@",body);
-        NSLog(@"%@",img);NSLog(@"******%@",video);
-        
-        // 追加图片数据
         // 循环遍历 img 的数组，查找 body 中 ref 的位置，如果找到使用 src 替换对应的图片内容
         for (NSDictionary *dict in img) {
             // 取出 ref 的内容
@@ -53,7 +48,31 @@
             body = [body stringByReplacingCharactersInRange:range withString:imgStr];
         }
         
+        // 循环遍历 video 数组
+        for (NSDictionary *dict in video) {
+            // 取出 ref 的内容
+            NSString *ref = dict[@"ref"];
+            // 在body中查找出 ref 的位置
+            NSRange range = [body rangeOfString:ref];
+            // 判断是否找到
+            if (range.location == NSNotFound) {
+                continue;
+            }
+            // 替换 body 中 rang 对应的位置
+            NSString *videoStr = [NSString stringWithFormat:@"<video src=\"%@\" />",dict[@"mp4_url"]];
+            body = [body stringByReplacingCharactersInRange:range withString:videoStr];
+        }
+        // 将 css 字符串拼接在 body 的前面
+        body = [[self cssString] stringByAppendingString:body];
+        
         [self.webView loadHTMLString:body baseURL:nil];
     }];
 }
+
+- (NSString *)cssString {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"news.css" ofType:nil];
+    
+    return [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
+}
+
 @end
