@@ -102,23 +102,8 @@ static NSString *headerCellID = @"headerListCell";
     }
     
     XGNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
-    
     // 设置数据
-    cell.titleLab.text = model.title;
-    cell.sourceLab.text = model.source;
-    cell.replyLab.text = @(model.replyCount).description;
-    
-    NSURL *url = [NSURL URLWithString:model.imgsrc];
-    [cell.iconView sd_setImageWithURL:url];
-    
-    // 设置多图cell（如果不是多图就不会进入这个循环）
-    NSInteger idnx = 0;
-    for (NSDictionary *dict in model.imgextra) {
-        // 获取 URL 的字符串
-        NSURL *url = [NSURL URLWithString:dict[@"imgsrc"]];
-        
-        [cell.extraIcon[idnx++] sd_setImageWithURL:url];
-    }
+    cell.newsItem = model;
     
     return cell;
 }

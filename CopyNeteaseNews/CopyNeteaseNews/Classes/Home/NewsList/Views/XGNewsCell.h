@@ -7,15 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class  XGNewsListItem;
 @interface XGNewsCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *iconView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLab;
-
-@property (weak, nonatomic) IBOutlet UILabel *sourceLab;
-@property (weak, nonatomic) IBOutlet UILabel *replyLab;
-
-@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *extraIcon;
+/**
+ *  新闻模型
+ */
+@property (nonatomic, strong) XGNewsListItem *newsItem;
 
 @end
