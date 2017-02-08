@@ -11,7 +11,8 @@
 #import "XGChannel.h"
 
 @interface XGHomeViewController ()
-
+// 频道视图
+@property (nonatomic, weak) XGChannelView *channelView;
 @end
 
 @implementation XGHomeViewController{
@@ -20,11 +21,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = NO;
    
     [self setupUI];
-    
+    // 加载频道数据
     _channelList = [XGChannel channelList];
-    NSLog(@"%@",_channelList);
+    
+    // 传递频道数据
+    _channelView.channelList = _channelList;
     
 }
 
@@ -41,6 +45,7 @@
         make.height.mas_equalTo(38);
     }];
     
+    _channelView = channel;
 }
 
 @end

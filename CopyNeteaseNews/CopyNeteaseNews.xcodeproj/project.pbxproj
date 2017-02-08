@@ -34,6 +34,7 @@
 		DB75B1641E4AFA0400C3D404 /* XGChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB75B1631E4AFA0400C3D404 /* XGChannelView.m */; };
 		DB75B1671E4B043F00C3D404 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = DB75B1661E4B043F00C3D404 /* topic_news.json */; };
 		DB75B16A1E4B046000C3D404 /* XGChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = DB75B1691E4B046000C3D404 /* XGChannel.m */; };
+		DBAD22871E4B0F69000ED1BA /* XGChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAD22861E4B0F69000ED1BA /* XGChannelLabel.m */; };
 		DBCE16191E4A07C3009D371C /* XGNewsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE16181E4A07C3009D371C /* XGNewsListController.m */; };
 		DBCE161D1E4A0F67009D371C /* XGNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE161C1E4A0F67009D371C /* XGNetworkManager.m */; };
 		DBCE16221E4A1763009D371C /* XGNewsListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE16211E4A1763009D371C /* XGNewsListItem.m */; };
@@ -95,6 +96,8 @@
 		DB75B1661E4B043F00C3D404 /* topic_news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topic_news.json; sourceTree = "<group>"; };
 		DB75B1681E4B046000C3D404 /* XGChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGChannel.h; sourceTree = "<group>"; };
 		DB75B1691E4B046000C3D404 /* XGChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGChannel.m; sourceTree = "<group>"; };
+		DBAD22851E4B0F69000ED1BA /* XGChannelLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGChannelLabel.h; sourceTree = "<group>"; };
+		DBAD22861E4B0F69000ED1BA /* XGChannelLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGChannelLabel.m; sourceTree = "<group>"; };
 		DBCE16171E4A07C3009D371C /* XGNewsListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGNewsListController.h; sourceTree = "<group>"; };
 		DBCE16181E4A07C3009D371C /* XGNewsListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGNewsListController.m; sourceTree = "<group>"; };
 		DBCE161B1E4A0F67009D371C /* XGNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGNetworkManager.h; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 				DB75B1601E4AF73300C3D404 /* XGChannelView.xib */,
 				DB75B1621E4AFA0400C3D404 /* XGChannelView.h */,
 				DB75B1631E4AFA0400C3D404 /* XGChannelView.m */,
+				DBAD22851E4B0F69000ED1BA /* XGChannelLabel.h */,
+				DBAD22861E4B0F69000ED1BA /* XGChannelLabel.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 				DB27381C1E49DF5200753186 /* NSString+XGBase64.m in Sources */,
 				DB2738191E49DF5200753186 /* NSArray+Log.m in Sources */,
 				DB27381E1E49DF5200753186 /* NSString+XGPath.m in Sources */,
+				DBAD22871E4B0F69000ED1BA /* XGChannelLabel.m in Sources */,
 				DB2738241E49DF5200753186 /* UIView+XGExtension.m in Sources */,
 				DBCE162F1E4A27CF009D371C /* XGNewsCell.m in Sources */,
 				DB27381D1E49DF5200753186 /* NSString+XGHash.m in Sources */,

@@ -1,0 +1,26 @@
+//
+//  XGChannelLabel.m
+//  CopyNeteaseNews
+//
+//  Created by 小果 on 2017/2/8.
+//  Copyright © 2017年 小果. All rights reserved.
+//
+
+#import "XGChannelLabel.h"
+
+#define kNormalSize 14
+#define kSelectedSize 18
+
+@implementation XGChannelLabel
++ (instancetype)channelLabelWithTitle:(NSString *)title {
+    
+    XGChannelLabel *lab = [self xg_labelWithText:title fontSize:kSelectedSize color:[UIColor blackColor]];
+    
+    lab.textAlignment = NSTextAlignmentCenter;
+    lab.font = [UIFont systemFontOfSize:kNormalSize];
+    [lab sizeToFit];
+    
+    return lab;
+}
+
+@end
