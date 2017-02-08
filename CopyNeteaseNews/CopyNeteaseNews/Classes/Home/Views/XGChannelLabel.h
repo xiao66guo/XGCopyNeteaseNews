@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface XGChannelLabel : UILabel
-
+// 标签的标题
 + (instancetype)channelLabelWithTitle:(NSString *)title;
+
+// 缩放的比例
+@property (nonatomic, assign) float scale;
 
 @end

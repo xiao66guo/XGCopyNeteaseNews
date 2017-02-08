@@ -28,7 +28,7 @@
     _channelList = channelList;
     
     // 初始化 lab 的数据
-    CGFloat x = 20;
+    CGFloat x = 30;
     CGFloat margin = 8;
     CGFloat height = _scrollView.bounds.size.height;
     
@@ -44,10 +44,29 @@
         
         [_scrollView addSubview:channelLab];
         
-        // 设置 scrollView 滚动的条件
-        _scrollView.contentSize = CGSizeMake(x, height);
-        _scrollView.showsVerticalScrollIndicator = NO;
-        _scrollView.showsHorizontalScrollIndicator = NO;
     }
+    // 设置 scrollView 滚动的条件
+    _scrollView.contentSize = CGSizeMake(x, height);
+    _scrollView.showsVerticalScrollIndicator = NO;
+    _scrollView.showsHorizontalScrollIndicator = NO;
+    
+    // 设置 第一个 频道标签的比例为 1
+    [self channelLabelWithIndex:0 scale:1.0];
 }
+
+/**
+ *  修改指定 索引频道标签的 scale 的值
+ *
+ *  @param index 频道的索引值
+ *  @param scale 缩放的比例 0 ~ 1
+ */
+- (void)channelLabelWithIndex:(NSInteger)index scale:(float)scale {
+    // 根据 index 取出对应的 channelLabel
+    XGChannelLabel *chaLabel = _scrollView.subviews[index];
+    
+    // 设置比例
+    chaLabel.scale = scale;
+    
+}
+
 @end

@@ -23,4 +23,16 @@
     return lab;
 }
 
+- (void)setScale:(float)scale {
+    _scale = scale;
+    
+    float max = (float)kSelectedSize / kNormalSize;
+    float min = 1;
+    
+    float sl = (max - 1) * scale + min;
+    
+    // 设置 label 的形变
+    self.transform = CGAffineTransformMakeScale(sl, sl);
+}
+
 @end

@@ -113,6 +113,5 @@
     XGNewsListController *listV = [[XGNewsListController alloc] initWithChannelID:_channelList[indx].tid channelIndex:indx];
     
     return listV;
-
 }
 @end
