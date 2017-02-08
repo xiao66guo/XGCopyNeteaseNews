@@ -12,7 +12,7 @@
 
 #import "XGNewsListController.h"
 
-@interface XGHomeViewController ()
+@interface XGHomeViewController ()<UIPageViewControllerDataSource>
 // 频道视图
 @property (nonatomic, weak) XGChannelView *channelView;
 @end
@@ -23,11 +23,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 取消自动调整滚动视图的间距
     self.automaticallyAdjustsScrollViewInsets = NO;
-   
-    [self setupUI];
     // 加载频道数据
     _channelList = [XGChannel channelList];
+   
+    [self setupUI];
     
     // 传递频道数据
     _channelView.channelList = _channelList;
@@ -58,7 +59,7 @@
     UIPageViewController *pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
     // 2、设置分页控制器的<子控制器 - 新闻列表控制器>
-    XGNewsListController *listVC = XGNewsListController.new;
+    XGNewsListController *listVC = [[XGNewsListController alloc] initWithChannelID:_channelList[2].tid channelIndex:2];
     [pageVC setViewControllers:@[listVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     // 3、将分页控制器当作子控制器添加到当前的控制器
@@ -75,5 +76,18 @@
     
     // 5、完成对子控制器的添加
     [pageVC didMoveToParentViewController:self];
+    
+    // 6、设置数据源
 }
+
+#pragma mark - UIPageViewControllerDataSource
+// 返回上一个视图控制器
+//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
+//    
+//}
+//
+//// 返回下一个视图控制器
+//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+//    
+//}
 @end

@@ -27,6 +27,14 @@ static NSString *headerCellID = @"headerListCell";
 
 @implementation XGNewsListController
 
+- (instancetype)initWithChannelID:(NSString *)channelID channelIndex:(NSInteger)index {
+    if (self = [super initWithNibName:nil bundle:nil]) {
+        _channelID = channelID;
+        _channelIndex = index;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
    
@@ -40,7 +48,7 @@ static NSString *headerCellID = @"headerListCell";
     // 首页频道：T1348647853363
     // 娱乐频道：T1348648517839
     // 历史频道：T1368497029546
-    [[XGNetworkManager shareManager] newsListWithChannel:@"T1348649079062" start:0 completion:^(NSArray *array, NSError *error) {
+    [[XGNetworkManager shareManager] newsListWithChannel:_channelID start:0 completion:^(NSArray *array, NSError *error) {
         NSLog(@"%@", array);
         
         // 字典转模型
