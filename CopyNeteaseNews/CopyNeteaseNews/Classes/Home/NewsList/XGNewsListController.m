@@ -69,6 +69,9 @@ static NSString *headerCellID = @"headerListCell";
     [tab registerNib:[UINib nibWithNibName:@"XGNewsExtraCell" bundle:nil] forCellReuseIdentifier:extraCellID];
     [tab registerNib:[UINib nibWithNibName:@"XGNewsBigImageCell" bundle:nil] forCellReuseIdentifier:bigImageCellID];
     [tab registerNib:[UINib nibWithNibName:@"XGNewsHeaderCell" bundle:nil] forCellReuseIdentifier:headerCellID];
+    
+    // 设置表格的 contentInset
+    tab.contentInset = UIEdgeInsetsMake(0, 0, 49, 0);
 
     // 设置自动行高
     tab.estimatedRowHeight = 100;
