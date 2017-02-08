@@ -67,6 +67,32 @@
 #pragma mark - 监听频道标签被点击的方法
 - (void)didSelectedIndex:(XGChannelView *)chaView {
     NSLog(@"选中的标签是：%zd",chaView.selectedIndex);
+    // 判断是否是当前选中的控制器，如果是就直接返回
+    NSInteger idx = chaView.selectedIndex;
+    if (_currentListV.channelIndex == idx) {
+        NSLog(@"哈哈哈哈哈");
+        return;
+    }
+    
+    // 设置选中标签的显示比例
+    [_channelView channelLabelWithIndex:idx scale:1.0];
+    
+    // 设置之前标签的显示比例
+    [_channelView channelLabelWithIndex:_currentListV.channelIndex scale:0.0];
+    
+    // 设置列表控制器的内容
+    XGNewsListController *lVC = [[XGNewsListController alloc] initWithChannelID:_channelList[idx].tid channelIndex:idx];
+    
+    // 设置分页控制器的视图
+        // 选中的上一个频道的标签
+    NSInteger direction = UIPageViewControllerNavigationDirectionForward;
+    if (idx < _currentListV.channelIndex) {
+        direction = UIPageViewControllerNavigationDirectionReverse;
+    }
+    [_pageViewController setViewControllers:@[lVC] direction:direction animated:YES completion:nil];
+    
+    // 记录当前的控制器
+    _currentListV = lVC;
 }
 
 #pragma mark - 设置分页控制器
@@ -76,6 +102,9 @@
     
     // 2、设置分页控制器的<子控制器 - 新闻列表控制器>
     XGNewsListController *listVC = [[XGNewsListController alloc] initWithChannelID:_channelList[0].tid channelIndex:0];
+    // 记录当前的列表控制器
+    _currentListV = listVC;
+    
     [pageVC setViewControllers:@[listVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     // 3、将分页控制器当作子控制器添加到当前的控制器
