@@ -8,17 +8,24 @@
 
 #import "XGHomeViewController.h"
 #import "XGChannelView.h"
+#import "XGChannel.h"
 
 @interface XGHomeViewController ()
 
 @end
 
-@implementation XGHomeViewController
+@implementation XGHomeViewController{
+    NSArray <XGChannel *>* _channelList;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
    
     [self setupUI];
+    
+    _channelList = [XGChannel channelList];
+    NSLog(@"%@",_channelList);
+    
 }
 
 #pragma mark - 设置界面
