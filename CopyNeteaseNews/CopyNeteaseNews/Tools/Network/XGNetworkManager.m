@@ -58,4 +58,13 @@
     }];
 }
 
+- (void)newsDetailWithDocid:(NSString *)docid completion:(void (^)(NSDictionary *, NSError *))completion {
+    NSString *urlString = [NSString stringWithFormat:@"%@/full.html",docid];
+    
+    [self GETRequest:urlString parameters:nil completion:^(id json, NSError *error) {
+        
+        completion(json[docid],error);
+    }];
+}
+
 @end

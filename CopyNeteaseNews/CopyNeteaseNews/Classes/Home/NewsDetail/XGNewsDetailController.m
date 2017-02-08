@@ -23,8 +23,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"接收到的模型：%@",_detailItem);
-    
-    
+//    NSLog(@"接收到的模型：%@",_detailItem);
+    [self loadData];
+}
+
+- (void)loadData {
+    [[XGNetworkManager shareManager] newsDetailWithDocid:_detailItem.docid completion:^(NSDictionary *dict, NSError *error) {
+        NSLog(@"%@",dict);
+    }];
 }
 @end
