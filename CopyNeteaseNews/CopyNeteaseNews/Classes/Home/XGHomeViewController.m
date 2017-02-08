@@ -12,9 +12,17 @@
 
 #import "XGNewsListController.h"
 
-@interface XGHomeViewController ()<UIPageViewControllerDataSource>
+@interface XGHomeViewController ()<UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 // 频道视图
 @property (nonatomic, weak) XGChannelView *channelView;
+// 分页控制器视图
+@property (nonatomic, weak) UIPageViewController *pageViewController;
+// 分页控制器内部的滚动视图
+@property (nonatomic, weak) UIScrollView *pageScroll;
+// 当前显示的列表控制器
+@property (nonatomic, weak) XGNewsListController *currentListV;
+// 将要显示的列表控制器
+@property (nonatomic, weak) XGNewsListController *nextListV;
 @end
 
 @implementation XGHomeViewController{
@@ -71,7 +79,6 @@
     [pageVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.channelView.mas_bottom);
         make.left.right.bottom.equalTo(self.view);
-//        make.bottom.equalTo(self.view).offset(-49);
     }];
     
     // 5、完成对子控制器的添加
@@ -79,6 +86,55 @@
     
     // 6、设置数据源
     pageVC.dataSource = self;
+    pageVC.delegate = self;
+    
+    _pageViewController = pageVC;
+    if ([pageVC.view.subviews[0] isKindOfClass:[UIScrollView class]]) {
+        _pageScroll = pageVC.view.subviews[0];
+    }
+}
+
+#pragma mark - KVO 的监听方法
+/**
+ *  KVO 统一调用的监听方法
+ *
+ *  @param keyPath 监听 keyPath
+ *  @param object  监听的对象,可以通过对象获的属性值
+ *  @param change  监听变化
+ *  @param context 上下文，通常传入 NULL
+ */
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    NSLog(@"=====> %@",NSStringFromCGPoint(_pageScroll.contentOffset));
+    
+    CGFloat width = _pageScroll.bounds.size.width;
+    CGFloat offsetX = ABS(_pageScroll.contentOffset.x - width);
+    CGFloat scale = offsetX / width;
+    
+    // 根据索引调整频道标签的比例
+    [_channelView channelLabelWithIndex:_currentListV.channelIndex scale:(1 - scale)];
+    [_channelView channelLabelWithIndex:_nextListV.channelIndex scale:scale];
+    
+}
+
+#pragma mark - UIPageViewControllerDelegate
+// 即将展现下一个控制器
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<XGNewsListController *> *)pendingViewControllers {
+    
+    // 记录当前显示的控制器和将要显示的控制器
+    _currentListV = pageViewController.viewControllers[0];
+    _nextListV = pendingViewControllers[0];
+    
+    // KVO 监听滚动视图
+    [_pageScroll addObserver:self forKeyPath:@"contentOffset" options:0 context:NULL];
+}
+
+// 完成展现控制器的动画效果
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
+    
+    
+    
+    // 注销滚动视图的观察
+    [_pageScroll removeObserver:self forKeyPath:@"contentOffset"];
 }
 
 #pragma mark - UIPageViewControllerDataSource

@@ -18,4 +18,11 @@
  */
 @property (nonatomic, strong) NSArray <XGChannel *> *channelList;
 
+/**
+ *  修改指定 索引频道标签的 scale 的值
+ *
+ *  @param index 频道的索引值
+ *  @param scale 缩放的比例 0 ~ 1
+ */
+- (void)channelLabelWithIndex:(NSInteger)index scale:(float)scale;
 @end
