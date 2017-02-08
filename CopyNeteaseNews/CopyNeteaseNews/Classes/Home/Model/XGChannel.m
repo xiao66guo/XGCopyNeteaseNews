@@ -23,7 +23,10 @@
     // 字典转模型
     NSArray *modelArray = [NSArray yy_modelArrayWithClass:[self class] json:array];
     
-    return modelArray;
+    return [modelArray sortedArrayUsingComparator:^NSComparisonResult(XGChannel *obj1, XGChannel *obj2) {
+        // 对 频道的 tid 进行升序排列
+        return [obj1.tid compare: obj2.tid];
+    }];
 }
 
 @end
