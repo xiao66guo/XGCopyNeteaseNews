@@ -34,6 +34,12 @@ extern NSString *const XGNewsListSelectedDocidNotification;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 隐藏导航控制器的导航条
+    // a> 第一种方法：不好，因为边缘返回的手势没有了
+    // self.navigationController.navigationBarHidden = YES;
+    // b> 第二种方法：边缘手势会保留
+    self.navigationController.navigationBar.hidden = YES;
+    
     // 取消自动调整滚动视图的间距
     self.automaticallyAdjustsScrollViewInsets = NO;
     // 加载频道数据
@@ -68,12 +74,24 @@ extern NSString *const XGNewsListSelectedDocidNotification;
 #pragma mark - 设置界面
 - (void)setupUI {
     
-//    self.view.backgroundColor = [UIColor xg_randomColor];
+    self.view.backgroundColor = [UIColor whiteColor];
+    // 创建 NavBar
+    UINavigationBar *navBar = [[UINavigationBar alloc] init];
+    [self.view addSubview:navBar];
+    [navBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.equalTo(self.view);
+        // 高度是 64 包含了状态栏的高度
+        make.height.mas_equalTo(64);
+    }];
+    // 设置标题
+    UINavigationItem *item  = [[UINavigationItem alloc] initWithTitle:@"网易新闻"];
+    navBar.items = @[item];
+    
     // 添加频道视图
     XGChannelView *channel = [XGChannelView loadChannelView];
     [self.view addSubview:channel];
     [channel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_topLayoutGuideBottom);
+        make.top.equalTo(navBar.mas_bottom);
         make.right.left.equalTo(self.view);
         make.height.mas_equalTo(38);
     }];

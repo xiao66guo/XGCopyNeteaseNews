@@ -16,7 +16,7 @@
 
 - (void)loadView {
     _webView = [UIWebView new];
-    _webView.backgroundColor = [UIColor clearColor];
+//    _webView.backgroundColor = [UIColor clearColor];
     self.view = _webView;
 }
 
