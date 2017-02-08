@@ -30,6 +30,8 @@
 		DB75B1591E4ADDB300C3D404 /* XGNewsBigImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB75B1581E4ADDB300C3D404 /* XGNewsBigImageCell.xib */; };
 		DB75B15B1E4AE23E00C3D404 /* XGNewsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB75B15A1E4AE23E00C3D404 /* XGNewsHeaderCell.xib */; };
 		DB75B15E1E4AF13600C3D404 /* UIImageView+XG_WebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DB75B15D1E4AF13600C3D404 /* UIImageView+XG_WebImage.m */; };
+		DB75B1611E4AF73300C3D404 /* XGChannelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB75B1601E4AF73300C3D404 /* XGChannelView.xib */; };
+		DB75B1641E4AFA0400C3D404 /* XGChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB75B1631E4AFA0400C3D404 /* XGChannelView.m */; };
 		DBCE16191E4A07C3009D371C /* XGNewsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE16181E4A07C3009D371C /* XGNewsListController.m */; };
 		DBCE161D1E4A0F67009D371C /* XGNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE161C1E4A0F67009D371C /* XGNetworkManager.m */; };
 		DBCE16221E4A1763009D371C /* XGNewsListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE16211E4A1763009D371C /* XGNewsListItem.m */; };
@@ -85,6 +87,9 @@
 		DB75B15A1E4AE23E00C3D404 /* XGNewsHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XGNewsHeaderCell.xib; sourceTree = "<group>"; };
 		DB75B15C1E4AF13600C3D404 /* UIImageView+XG_WebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+XG_WebImage.h"; sourceTree = "<group>"; };
 		DB75B15D1E4AF13600C3D404 /* UIImageView+XG_WebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+XG_WebImage.m"; sourceTree = "<group>"; };
+		DB75B1601E4AF73300C3D404 /* XGChannelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XGChannelView.xib; sourceTree = "<group>"; };
+		DB75B1621E4AFA0400C3D404 /* XGChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGChannelView.h; sourceTree = "<group>"; };
+		DB75B1631E4AFA0400C3D404 /* XGChannelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGChannelView.m; sourceTree = "<group>"; };
 		DBCE16171E4A07C3009D371C /* XGNewsListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGNewsListController.h; sourceTree = "<group>"; };
 		DBCE16181E4A07C3009D371C /* XGNewsListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGNewsListController.m; sourceTree = "<group>"; };
 		DBCE161B1E4A0F67009D371C /* XGNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGNetworkManager.h; sourceTree = "<group>"; };
@@ -180,6 +185,7 @@
 		DB2737FA1E49DF4C00753186 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DB75B15F1E4AF70E00C3D404 /* Views */,
 				DBCE16161E4A06BF009D371C /* NewsList */,
 				DBCE16151E4A06BF009D371C /* NewsDetail */,
 				DB27382C1E49E0AF00753186 /* XGHomeViewController.h */,
@@ -238,6 +244,16 @@
 				DB2738181E49DF5200753186 /* XGExtension.h */,
 			);
 			path = XGExtension;
+			sourceTree = "<group>";
+		};
+		DB75B15F1E4AF70E00C3D404 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB75B1601E4AF73300C3D404 /* XGChannelView.xib */,
+				DB75B1621E4AFA0400C3D404 /* XGChannelView.h */,
+				DB75B1631E4AFA0400C3D404 /* XGChannelView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		DBCE16151E4A06BF009D371C /* NewsDetail */ = {
@@ -357,6 +373,7 @@
 				DBCE162C1E4A202E009D371C /* XGNewsExtraCell.xib in Resources */,
 				DB2737F21E49DCE200753186 /* LaunchScreen.storyboard in Resources */,
 				DBCE16271E4A18D7009D371C /* XGNewsNormalCell.xib in Resources */,
+				DB75B1611E4AF73300C3D404 /* XGChannelView.xib in Resources */,
 				DB2737EF1E49DCE200753186 /* Assets.xcassets in Resources */,
 				DB75B1591E4ADDB300C3D404 /* XGNewsBigImageCell.xib in Resources */,
 			);
@@ -424,6 +441,7 @@
 				DB2738251E49DF5200753186 /* UIViewController+XGExtension.m in Sources */,
 				DBCE161D1E4A0F67009D371C /* XGNetworkManager.m in Sources */,
 				DB75B15E1E4AF13600C3D404 /* UIImageView+XG_WebImage.m in Sources */,
+				DB75B1641E4AFA0400C3D404 /* XGChannelView.m in Sources */,
 				DBCE16221E4A1763009D371C /* XGNewsListItem.m in Sources */,
 				DB27381A1E49DF5200753186 /* NSAttributedString+XGExtension.m in Sources */,
 				DB27382B1E49E07F00753186 /* XGMainController.m in Sources */,

@@ -26,7 +26,7 @@
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _window.backgroundColor = [UIColor whiteColor];
     
-    Class cls = NSClassFromString(@"XGNewsListController");
+    Class cls = NSClassFromString(@"XGMainController");
     
     UIViewController *vc = cls.new;
     

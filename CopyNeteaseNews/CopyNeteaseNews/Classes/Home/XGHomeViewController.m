@@ -7,6 +7,7 @@
 //
 
 #import "XGHomeViewController.h"
+#import "XGChannelView.h"
 
 @interface XGHomeViewController ()
 
@@ -17,6 +18,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    self.view.backgroundColor = [UIColor xg_randomColor];
+    [self setupUI];
 }
+
+#pragma mark - 设置界面
+- (void)setupUI {
+    
+    self.view.backgroundColor = [UIColor xg_randomColor];
+    // 添加频道视图
+    XGChannelView *channel = [XGChannelView loadChannelView];
+    [self.view addSubview:channel];
+    [channel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.mas_topLayoutGuideBottom);
+        make.right.left.equalTo(self.view);
+        make.height.mas_equalTo(38);
+    }];
+    
+}
+
 @end
