@@ -39,7 +39,7 @@ static NSString *headerCellID = @"headerListCell";
     // 体育频道：T1348649079062
     // 首页频道：T1348647853363
     // 娱乐频道：T1348648517839
-    [[XGNetworkManager shareManager] newsListWithChannel:@"T1348648517839" start:0 completion:^(NSArray *array, NSError *error) {
+    [[XGNetworkManager shareManager] newsListWithChannel:@"T1348649079062" start:0 completion:^(NSArray *array, NSError *error) {
         NSLog(@"%@", array);
         
         // 字典转模型

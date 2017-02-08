@@ -45,8 +45,6 @@
         
         [_extraIcon[idnx++] xg_setImageWithURLString:dict[@"imgsrc"]];
     }
-
-    
 }
 
 @end
