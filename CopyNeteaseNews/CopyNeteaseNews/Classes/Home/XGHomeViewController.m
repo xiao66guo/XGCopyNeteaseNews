@@ -59,7 +59,7 @@
     UIPageViewController *pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
     // 2、设置分页控制器的<子控制器 - 新闻列表控制器>
-    XGNewsListController *listVC = [[XGNewsListController alloc] initWithChannelID:_channelList[2].tid channelIndex:2];
+    XGNewsListController *listVC = [[XGNewsListController alloc] initWithChannelID:_channelList[0].tid channelIndex:0];
     [pageVC setViewControllers:@[listVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     // 3、将分页控制器当作子控制器添加到当前的控制器
@@ -78,16 +78,41 @@
     [pageVC didMoveToParentViewController:self];
     
     // 6、设置数据源
+    pageVC.dataSource = self;
 }
 
 #pragma mark - UIPageViewControllerDataSource
 // 返回上一个视图控制器
-//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-//    
-//}
-//
-//// 返回下一个视图控制器
-//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-//    
-//}
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(XGNewsListController *)viewController {
+    
+    // 获取当前控制器的频道的索引
+    NSInteger indx = viewController.channelIndex;
+    indx--;
+    
+    if (indx < 0) {
+        NSLog(@"已到第一个频道了哦");
+        return nil;
+    }
+    
+    XGNewsListController *listV = [[XGNewsListController alloc] initWithChannelID:_channelList[indx].tid channelIndex:indx];
+    
+    return listV;
+}
+
+// 返回下一个视图控制器
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(XGNewsListController *)viewController {
+    // 获取当前控制器的频道的索引
+    NSInteger indx = viewController.channelIndex;
+    indx++;
+    
+    if (indx >= _channelList.count) {
+        NSLog(@"已到最后一个频道了哦");
+        return nil;
+    }
+    
+    XGNewsListController *listV = [[XGNewsListController alloc] initWithChannelID:_channelList[indx].tid channelIndex:indx];
+    
+    return listV;
+
+}
 @end

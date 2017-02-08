@@ -49,7 +49,7 @@ static NSString *headerCellID = @"headerListCell";
     // 娱乐频道：T1348648517839
     // 历史频道：T1368497029546
     [[XGNetworkManager shareManager] newsListWithChannel:_channelID start:0 completion:^(NSArray *array, NSError *error) {
-        NSLog(@"%@", array);
+//        NSLog(@"%@", array);
         
         // 字典转模型
         NSArray *list = [NSArray yy_modelArrayWithClass:[XGNewsListItem class] json:array];
