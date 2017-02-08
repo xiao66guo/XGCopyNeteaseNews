@@ -14,6 +14,7 @@
 static NSString *normalCellID = @"normalListCell";
 static NSString *extraCellID = @"extraListCell";
 static NSString *bigImageCellID = @"bigImageListCell";
+static NSString *headerCellID = @"headerListCell";
 
 @interface XGNewsListController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) UITableView *tableView;
@@ -66,6 +67,7 @@ static NSString *bigImageCellID = @"bigImageListCell";
     [tab registerNib:[UINib nibWithNibName:@"XGNewsNormalCell" bundle:nil] forCellReuseIdentifier:normalCellID];
     [tab registerNib:[UINib nibWithNibName:@"XGNewsExtraCell" bundle:nil] forCellReuseIdentifier:extraCellID];
     [tab registerNib:[UINib nibWithNibName:@"XGNewsBigImageCell" bundle:nil] forCellReuseIdentifier:bigImageCellID];
+    [tab registerNib:[UINib nibWithNibName:@"XGNewsHeaderCell" bundle:nil] forCellReuseIdentifier:headerCellID];
 
     // 设置自动行高
     tab.estimatedRowHeight = 100;
@@ -89,7 +91,9 @@ static NSString *bigImageCellID = @"bigImageListCell";
   
 //    NSString *cellID = model.imgextra.count > 0 ? extraCellID : normalCellID;
     NSString *cellID;
-    if (model.imgType) {
+    if (model.hasHead) {
+        cellID = headerCellID;
+    } else if (model.imgType) {
         cellID = bigImageCellID;
     } else if (model.imgextra.count > 0) {
         cellID = extraCellID;

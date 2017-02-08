@@ -28,6 +28,7 @@
 		DB27382B1E49E07F00753186 /* XGMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27382A1E49E07F00753186 /* XGMainController.m */; };
 		DB27382E1E49E0AF00753186 /* XGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27382D1E49E0AF00753186 /* XGHomeViewController.m */; };
 		DB75B1591E4ADDB300C3D404 /* XGNewsBigImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB75B1581E4ADDB300C3D404 /* XGNewsBigImageCell.xib */; };
+		DB75B15B1E4AE23E00C3D404 /* XGNewsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB75B15A1E4AE23E00C3D404 /* XGNewsHeaderCell.xib */; };
 		DBCE16191E4A07C3009D371C /* XGNewsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE16181E4A07C3009D371C /* XGNewsListController.m */; };
 		DBCE161D1E4A0F67009D371C /* XGNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE161C1E4A0F67009D371C /* XGNetworkManager.m */; };
 		DBCE16221E4A1763009D371C /* XGNewsListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE16211E4A1763009D371C /* XGNewsListItem.m */; };
@@ -80,6 +81,7 @@
 		DB27382D1E49E0AF00753186 /* XGHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGHomeViewController.m; sourceTree = "<group>"; };
 		DB6311591E49E910004E68C5 /* NeteaseNews.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NeteaseNews.pch; sourceTree = "<group>"; };
 		DB75B1581E4ADDB300C3D404 /* XGNewsBigImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XGNewsBigImageCell.xib; sourceTree = "<group>"; };
+		DB75B15A1E4AE23E00C3D404 /* XGNewsHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XGNewsHeaderCell.xib; sourceTree = "<group>"; };
 		DBCE16171E4A07C3009D371C /* XGNewsListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGNewsListController.h; sourceTree = "<group>"; };
 		DBCE16181E4A07C3009D371C /* XGNewsListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGNewsListController.m; sourceTree = "<group>"; };
 		DBCE161B1E4A0F67009D371C /* XGNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGNetworkManager.h; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				DBCE16251E4A18D7009D371C /* XGNewsNormalCell.xib */,
 				DBCE162A1E4A202E009D371C /* XGNewsExtraCell.xib */,
 				DB75B1581E4ADDB300C3D404 /* XGNewsBigImageCell.xib */,
+				DB75B15A1E4AE23E00C3D404 /* XGNewsHeaderCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB75B15B1E4AE23E00C3D404 /* XGNewsHeaderCell.xib in Resources */,
 				DBCE162C1E4A202E009D371C /* XGNewsExtraCell.xib in Resources */,
 				DB2737F21E49DCE200753186 /* LaunchScreen.storyboard in Resources */,
 				DBCE16271E4A18D7009D371C /* XGNewsNormalCell.xib in Resources */,
