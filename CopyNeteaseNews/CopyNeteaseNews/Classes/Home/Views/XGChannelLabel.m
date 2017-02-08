@@ -28,11 +28,13 @@
     
     float max = (float)kSelectedSize / kNormalSize;
     float min = 1;
-    
     float sl = (max - 1) * scale + min;
     
     // 设置 label 的形变
     self.transform = CGAffineTransformMakeScale(sl, sl);
+    
+    // 设置颜色的渐变 < 1为红色， 0为黑色>
+    self.textColor = [UIColor colorWithRed:scale green:0 blue:0 alpha:1.0];
 }
 
 @end

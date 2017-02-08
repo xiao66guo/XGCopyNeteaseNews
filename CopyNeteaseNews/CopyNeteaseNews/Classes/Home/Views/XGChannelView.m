@@ -29,7 +29,7 @@
     
     // 初始化 lab 的数据
     CGFloat x = 30;
-    CGFloat margin = 8;
+    CGFloat margin = 20;
     CGFloat height = _scrollView.bounds.size.height;
     
     // 向 scrollView 中添加频道的控件
