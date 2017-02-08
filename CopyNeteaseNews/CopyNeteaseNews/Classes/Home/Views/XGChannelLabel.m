@@ -20,6 +20,8 @@
     lab.font = [UIFont systemFontOfSize:kNormalSize];
     [lab sizeToFit];
     
+    lab.userInteractionEnabled = YES;
+    
     return lab;
 }
 

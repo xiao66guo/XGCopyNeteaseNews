@@ -33,6 +33,7 @@
     CGFloat height = _scrollView.bounds.size.height;
     
     // 向 scrollView 中添加频道的控件
+    NSInteger idx = 0;
     for (XGChannel *channel in channelList) {
         // 频道标签
         XGChannelLabel *channelLab = [XGChannelLabel channelLabelWithTitle:channel.tname];
@@ -41,6 +42,12 @@
         channelLab.frame = CGRectMake(x, 0, channelLab.bounds.size.width, height);
         // 用递增的方法设置其他label的位置
         x += channelLab.bounds.size.width + margin;
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapChannelLabel:)];
+        [channelLab addGestureRecognizer:tap];
+        
+        // 设置 lab 的 tag 值
+        channelLab.tag = idx++;
         
         [_scrollView addSubview:channelLab];
         
@@ -52,6 +59,16 @@
     
     // 设置 第一个 频道标签的比例为 1
     [self channelLabelWithIndex:0 scale:1.0];
+}
+
+- (void)tapChannelLabel:(UITapGestureRecognizer *)recognizer {
+    // 获取手势识别的视图
+    XGChannelLabel *lab = (XGChannelLabel *)recognizer.view;
+    // 记录属性值
+    _selectedIndex = lab.tag;
+    
+    // 发送事件
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 /**
@@ -66,7 +83,6 @@
     
     // 设置比例
     chaLabel.scale = scale;
-    
 }
 
 @end

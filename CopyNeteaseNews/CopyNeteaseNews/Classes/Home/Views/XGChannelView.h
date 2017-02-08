@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class XGChannel;
-@interface XGChannelView : UIView
+@interface XGChannelView : UIControl
 /**
  *  从 XIB 加载并返回频道视图
  */
@@ -17,6 +17,10 @@
  *  频道的列表数组
  */
 @property (nonatomic, strong) NSArray <XGChannel *> *channelList;
+/**
+ *  选中的标签索引
+ */
+@property (nonatomic, assign) NSInteger selectedIndex;
 
 /**
  *  修改指定 索引频道标签的 scale 的值

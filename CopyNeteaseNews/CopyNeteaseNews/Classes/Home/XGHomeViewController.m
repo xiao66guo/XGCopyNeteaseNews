@@ -58,7 +58,15 @@
     
     _channelView = channel;
     
+    // 添加监听的方法
+    [channel addTarget:self action:@selector(didSelectedIndex:) forControlEvents:UIControlEventValueChanged];
+    
     [self setupPageController];
+}
+
+#pragma mark - 监听频道标签被点击的方法
+- (void)didSelectedIndex:(XGChannelView *)chaView {
+    NSLog(@"选中的标签是：%zd",chaView.selectedIndex);
 }
 
 #pragma mark - 设置分页控制器
@@ -104,7 +112,7 @@
  *  @param context 上下文，通常传入 NULL
  */
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
-    NSLog(@"=====> %@",NSStringFromCGPoint(_pageScroll.contentOffset));
+//    NSLog(@"=====> %@",NSStringFromCGPoint(_pageScroll.contentOffset));
     
     CGFloat width = _pageScroll.bounds.size.width;
     CGFloat offsetX = ABS(_pageScroll.contentOffset.x - width);
