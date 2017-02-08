@@ -29,8 +29,7 @@
     _scale = scale;
     
     float max = (float)kSelectedSize / kNormalSize;
-    float min = 1;
-    float sl = (max - 1) * scale + min;
+    float sl = (max - 1) * scale + 1;
     
     // 设置 label 的形变
     self.transform = CGAffineTransformMakeScale(sl, sl);

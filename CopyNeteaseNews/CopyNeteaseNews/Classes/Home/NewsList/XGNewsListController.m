@@ -11,6 +11,9 @@
 #import "XGNewsCell.h"
 #import <UIImageView+WebCache.h>
 
+// 选中新闻列表通知
+NSString *const XGNewsListSelectedDocidNotification = @"XGNewsListSelectedDocidNotification";
+
 static NSString *normalCellID = @"normalListCell";
 static NSString *extraCellID = @"extraListCell";
 static NSString *bigImageCellID = @"bigImageListCell";
@@ -101,7 +104,6 @@ static NSString *headerCellID = @"headerListCell";
     // 根据模型来判断 CellID
     XGNewsListItem *model = _newsList[indexPath.row];
   
-//    NSString *cellID = model.imgextra.count > 0 ? extraCellID : normalCellID;
     NSString *cellID;
     if (model.hasHead) {
         cellID = headerCellID;
@@ -120,4 +122,12 @@ static NSString *headerCellID = @"headerListCell";
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    XGNewsListItem *model = _newsList[indexPath.row];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:XGNewsListSelectedDocidNotification object:model];
+    
+}
 @end

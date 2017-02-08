@@ -43,4 +43,9 @@
  * 是否是顶部 Cell
  */
 @property (nonatomic, assign) BOOL hasHead;
+/**
+ *  文档编号
+ */
+@property (nonatomic, copy) NSString *docid;
+
 @end

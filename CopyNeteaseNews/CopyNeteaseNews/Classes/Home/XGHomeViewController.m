@@ -9,8 +9,10 @@
 #import "XGHomeViewController.h"
 #import "XGChannelView.h"
 #import "XGChannel.h"
-
+#import "XGNewsListItem.h"
 #import "XGNewsListController.h"
+
+extern NSString *const XGNewsListSelectedDocidNotification;
 
 @interface XGHomeViewController ()<UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 // 频道视图
@@ -41,6 +43,17 @@
     // 传递频道数据
     _channelView.channelList = _channelList;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectedDocidDetail:) name:XGNewsListSelectedDocidNotification object:nil];
+    
+}
+
+#pragma mark - 通知的监听方法
+- (void)didSelectedDocidDetail:(NSNotification *)noti {
+    XGNewsListItem *model = noti.object; 
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - 设置界面
