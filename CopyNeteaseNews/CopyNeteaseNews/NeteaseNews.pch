@@ -10,7 +10,11 @@
 
 #import <Masonry.h>
 #import <NSObject+YYModel.h>
+
 #import "XGExtension.h"
+
 #import "XGNetworkManager.h"
+
+#import "UIImageView+XG_WebImage.h"
 
 #endif

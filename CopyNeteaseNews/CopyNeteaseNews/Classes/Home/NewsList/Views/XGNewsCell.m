@@ -8,7 +8,7 @@
 
 #import "XGNewsCell.h"
 #import "XGNewsListItem.h"
-#import <UIImageView+WebCache.h>
+
 @interface XGNewsCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
@@ -37,16 +37,13 @@
     _sourceLab.text = newsItem.source;
     _replyLab.text = @(newsItem.replyCount).description;
     
-    NSURL *url = [NSURL URLWithString:newsItem.imgsrc];
-    [_iconView sd_setImageWithURL:url];
+    [_iconView xg_setImageWithURLString:newsItem.imgsrc];
     
     // 设置多图cell（如果不是多图就不会进入这个循环）
     NSInteger idnx = 0;
     for (NSDictionary *dict in newsItem.imgextra) {
-        // 获取 URL 的字符串
-        NSURL *url = [NSURL URLWithString:dict[@"imgsrc"]];
         
-        [_extraIcon[idnx++] sd_setImageWithURL:url];
+        [_extraIcon[idnx++] xg_setImageWithURLString:dict[@"imgsrc"]];
     }
 
     

@@ -29,6 +29,7 @@
 		DB27382E1E49E0AF00753186 /* XGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27382D1E49E0AF00753186 /* XGHomeViewController.m */; };
 		DB75B1591E4ADDB300C3D404 /* XGNewsBigImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB75B1581E4ADDB300C3D404 /* XGNewsBigImageCell.xib */; };
 		DB75B15B1E4AE23E00C3D404 /* XGNewsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB75B15A1E4AE23E00C3D404 /* XGNewsHeaderCell.xib */; };
+		DB75B15E1E4AF13600C3D404 /* UIImageView+XG_WebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DB75B15D1E4AF13600C3D404 /* UIImageView+XG_WebImage.m */; };
 		DBCE16191E4A07C3009D371C /* XGNewsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE16181E4A07C3009D371C /* XGNewsListController.m */; };
 		DBCE161D1E4A0F67009D371C /* XGNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE161C1E4A0F67009D371C /* XGNetworkManager.m */; };
 		DBCE16221E4A1763009D371C /* XGNewsListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCE16211E4A1763009D371C /* XGNewsListItem.m */; };
@@ -82,6 +83,8 @@
 		DB6311591E49E910004E68C5 /* NeteaseNews.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NeteaseNews.pch; sourceTree = "<group>"; };
 		DB75B1581E4ADDB300C3D404 /* XGNewsBigImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XGNewsBigImageCell.xib; sourceTree = "<group>"; };
 		DB75B15A1E4AE23E00C3D404 /* XGNewsHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XGNewsHeaderCell.xib; sourceTree = "<group>"; };
+		DB75B15C1E4AF13600C3D404 /* UIImageView+XG_WebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+XG_WebImage.h"; sourceTree = "<group>"; };
+		DB75B15D1E4AF13600C3D404 /* UIImageView+XG_WebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+XG_WebImage.m"; sourceTree = "<group>"; };
 		DBCE16171E4A07C3009D371C /* XGNewsListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGNewsListController.h; sourceTree = "<group>"; };
 		DBCE16181E4A07C3009D371C /* XGNewsListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGNewsListController.m; sourceTree = "<group>"; };
 		DBCE161B1E4A0F67009D371C /* XGNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGNetworkManager.h; sourceTree = "<group>"; };
@@ -260,6 +263,8 @@
 			children = (
 				DBCE161B1E4A0F67009D371C /* XGNetworkManager.h */,
 				DBCE161C1E4A0F67009D371C /* XGNetworkManager.m */,
+				DB75B15C1E4AF13600C3D404 /* UIImageView+XG_WebImage.h */,
+				DB75B15D1E4AF13600C3D404 /* UIImageView+XG_WebImage.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 				DBCE16191E4A07C3009D371C /* XGNewsListController.m in Sources */,
 				DB2738251E49DF5200753186 /* UIViewController+XGExtension.m in Sources */,
 				DBCE161D1E4A0F67009D371C /* XGNetworkManager.m in Sources */,
+				DB75B15E1E4AF13600C3D404 /* UIImageView+XG_WebImage.m in Sources */,
 				DBCE16221E4A1763009D371C /* XGNewsListItem.m in Sources */,
 				DB27381A1E49DF5200753186 /* NSAttributedString+XGExtension.m in Sources */,
 				DB27382B1E49E07F00753186 /* XGMainController.m in Sources */,
