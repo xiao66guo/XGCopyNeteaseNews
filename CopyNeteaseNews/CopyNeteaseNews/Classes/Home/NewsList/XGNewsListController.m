@@ -13,6 +13,7 @@
 
 static NSString *normalCellID = @"normalListCell";
 static NSString *extraCellID = @"extraListCell";
+static NSString *bigImageCellID = @"bigImageListCell";
 
 @interface XGNewsListController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak) UITableView *tableView;
@@ -34,8 +35,11 @@ static NSString *extraCellID = @"extraListCell";
 
 #pragma mark - 加载数据
 - (void)loadData {
-    [[XGNetworkManager shareManager] newsListWithChannel:@"T1348649079062" start:0 completion:^(NSArray *array, NSError *error) {
-//        NSLog(@"%@", array);
+    // 体育频道：T1348649079062
+    // 首页频道：T1348647853363
+    // 娱乐频道：T1348648517839
+    [[XGNetworkManager shareManager] newsListWithChannel:@"T1348648517839" start:0 completion:^(NSArray *array, NSError *error) {
+        NSLog(@"%@", array);
         
         // 字典转模型
         NSArray *list = [NSArray yy_modelArrayWithClass:[XGNewsListItem class] json:array];
@@ -61,8 +65,8 @@ static NSString *extraCellID = @"extraListCell";
     // 注册Cell
     [tab registerNib:[UINib nibWithNibName:@"XGNewsNormalCell" bundle:nil] forCellReuseIdentifier:normalCellID];
     [tab registerNib:[UINib nibWithNibName:@"XGNewsExtraCell" bundle:nil] forCellReuseIdentifier:extraCellID];
+    [tab registerNib:[UINib nibWithNibName:@"XGNewsBigImageCell" bundle:nil] forCellReuseIdentifier:bigImageCellID];
 
-    
     // 设置自动行高
     tab.estimatedRowHeight = 100;
     tab.rowHeight = UITableViewAutomaticDimension;
@@ -83,13 +87,19 @@ static NSString *extraCellID = @"extraListCell";
     // 根据模型来判断 CellID
     XGNewsListItem *model = _newsList[indexPath.row];
   
-    NSString *cellID = model.imgextra.count > 0 ? extraCellID : normalCellID;
+//    NSString *cellID = model.imgextra.count > 0 ? extraCellID : normalCellID;
+    NSString *cellID;
+    if (model.imgType) {
+        cellID = bigImageCellID;
+    } else if (model.imgextra.count > 0) {
+        cellID = extraCellID;
+    } else {
+        cellID = normalCellID;
+    }
     
     XGNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     
-    // 取出模型并设置数据
-    
-    
+    // 设置数据
     cell.titleLab.text = model.title;
     cell.sourceLab.text = model.source;
     cell.replyLab.text = @(model.replyCount).description;
