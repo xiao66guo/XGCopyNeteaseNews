@@ -11,6 +11,7 @@
 #import "XGChannel.h"
 #import "XGNewsListItem.h"
 #import "XGNewsListController.h"
+#import "XGNewsDetailController.h"
 
 extern NSString *const XGNewsListSelectedDocidNotification;
 
@@ -49,7 +50,15 @@ extern NSString *const XGNewsListSelectedDocidNotification;
 
 #pragma mark - 通知的监听方法
 - (void)didSelectedDocidDetail:(NSNotification *)noti {
-    XGNewsListItem *model = noti.object; 
+    XGNewsListItem *model = noti.object;
+    
+    // 创建目标控制器
+    XGNewsDetailController *detailVC = XGNewsDetailController.new;
+    detailVC.detailItem = model;
+    // 隐藏底部tabbar
+    detailVC.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (void)dealloc {
@@ -59,7 +68,7 @@ extern NSString *const XGNewsListSelectedDocidNotification;
 #pragma mark - 设置界面
 - (void)setupUI {
     
-    self.view.backgroundColor = [UIColor xg_randomColor];
+//    self.view.backgroundColor = [UIColor xg_randomColor];
     // 添加频道视图
     XGChannelView *channel = [XGChannelView loadChannelView];
     [self.view addSubview:channel];

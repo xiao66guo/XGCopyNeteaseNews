@@ -27,6 +27,7 @@
 		DB2738251E49DF5200753186 /* UIViewController+XGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2738171E49DF5200753186 /* UIViewController+XGExtension.m */; };
 		DB27382B1E49E07F00753186 /* XGMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27382A1E49E07F00753186 /* XGMainController.m */; };
 		DB27382E1E49E0AF00753186 /* XGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27382D1E49E0AF00753186 /* XGHomeViewController.m */; };
+		DB5EF0411E4B55A7006A210C /* XGNewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5EF0401E4B55A7006A210C /* XGNewsDetailController.m */; };
 		DB75B1591E4ADDB300C3D404 /* XGNewsBigImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB75B1581E4ADDB300C3D404 /* XGNewsBigImageCell.xib */; };
 		DB75B15B1E4AE23E00C3D404 /* XGNewsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB75B15A1E4AE23E00C3D404 /* XGNewsHeaderCell.xib */; };
 		DB75B15E1E4AF13600C3D404 /* UIImageView+XG_WebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DB75B15D1E4AF13600C3D404 /* UIImageView+XG_WebImage.m */; };
@@ -85,6 +86,8 @@
 		DB27382A1E49E07F00753186 /* XGMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGMainController.m; sourceTree = "<group>"; };
 		DB27382C1E49E0AF00753186 /* XGHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGHomeViewController.h; sourceTree = "<group>"; };
 		DB27382D1E49E0AF00753186 /* XGHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGHomeViewController.m; sourceTree = "<group>"; };
+		DB5EF03F1E4B55A7006A210C /* XGNewsDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGNewsDetailController.h; sourceTree = "<group>"; };
+		DB5EF0401E4B55A7006A210C /* XGNewsDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGNewsDetailController.m; sourceTree = "<group>"; };
 		DB6311591E49E910004E68C5 /* NeteaseNews.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NeteaseNews.pch; sourceTree = "<group>"; };
 		DB75B1581E4ADDB300C3D404 /* XGNewsBigImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XGNewsBigImageCell.xib; sourceTree = "<group>"; };
 		DB75B15A1E4AE23E00C3D404 /* XGNewsHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XGNewsHeaderCell.xib; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 		DBCE16151E4A06BF009D371C /* NewsDetail */ = {
 			isa = PBXGroup;
 			children = (
+				DB5EF03F1E4B55A7006A210C /* XGNewsDetailController.h */,
+				DB5EF0401E4B55A7006A210C /* XGNewsDetailController.m */,
 			);
 			path = NewsDetail;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				DB27381E1E49DF5200753186 /* NSString+XGPath.m in Sources */,
 				DBAD22871E4B0F69000ED1BA /* XGChannelLabel.m in Sources */,
 				DB2738241E49DF5200753186 /* UIView+XGExtension.m in Sources */,
+				DB5EF0411E4B55A7006A210C /* XGNewsDetailController.m in Sources */,
 				DBCE162F1E4A27CF009D371C /* XGNewsCell.m in Sources */,
 				DB27381D1E49DF5200753186 /* NSString+XGHash.m in Sources */,
 				DB2738231E49DF5200753186 /* UIScreen+XGExtension.m in Sources */,
