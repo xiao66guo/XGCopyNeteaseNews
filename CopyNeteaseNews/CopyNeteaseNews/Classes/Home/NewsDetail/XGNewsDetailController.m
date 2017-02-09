@@ -16,6 +16,7 @@
 
 - (void)loadView {
     _webView = [UIWebView new];
+    _webView.backgroundColor = [UIColor clearColor];
     self.view = _webView;
     
     // 创建 NavBar

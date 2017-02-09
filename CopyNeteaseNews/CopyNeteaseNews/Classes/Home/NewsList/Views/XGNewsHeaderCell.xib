@@ -14,46 +14,46 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="183"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FKz-cP-P3v">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E18-WW-95K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="183"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="183" id="5Hu-UI-b3N"/>
+                            <constraint firstAttribute="height" priority="750" constant="183" id="gpB-yq-cpp"/>
                         </constraints>
                     </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3R-Hu-spF">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="poZ-Ut-SVr">
                         <rect key="frame" x="0.0" y="155" width="320" height="28"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhK-wg-AZB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvy-kP-tcR">
                                 <rect key="frame" x="10" y="5" width="38" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="yhK-wg-AZB" firstAttribute="leading" secondItem="M3R-Hu-spF" secondAttribute="leading" constant="10" id="5rR-Sb-Ecq"/>
-                            <constraint firstItem="yhK-wg-AZB" firstAttribute="centerY" secondItem="M3R-Hu-spF" secondAttribute="centerY" id="777-k2-hr8"/>
-                            <constraint firstAttribute="height" constant="28" id="IfT-ph-92P"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yhK-wg-AZB" secondAttribute="trailing" constant="10" id="ShP-yT-tOv"/>
+                            <constraint firstAttribute="height" constant="28" id="0s0-7L-Vjh"/>
+                            <constraint firstItem="Tvy-kP-tcR" firstAttribute="centerY" secondItem="poZ-Ut-SVr" secondAttribute="centerY" id="BZa-AF-I51"/>
+                            <constraint firstItem="Tvy-kP-tcR" firstAttribute="leading" secondItem="poZ-Ut-SVr" secondAttribute="leading" constant="10" id="LbE-Nd-v4z"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tvy-kP-tcR" secondAttribute="trailing" constant="10" id="Qwq-Wp-nwT"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="FKz-cP-P3v" firstAttribute="leading" secondItem="m48-Ze-nr6" secondAttribute="leading" id="9Vd-kt-wxi"/>
-                    <constraint firstAttribute="bottom" secondItem="FKz-cP-P3v" secondAttribute="bottom" id="Vyf-Wc-tOa"/>
-                    <constraint firstItem="M3R-Hu-spF" firstAttribute="leading" secondItem="m48-Ze-nr6" secondAttribute="leading" id="cGA-Uh-2fA"/>
-                    <constraint firstAttribute="trailing" secondItem="M3R-Hu-spF" secondAttribute="trailing" id="oqi-BD-KVX"/>
-                    <constraint firstItem="FKz-cP-P3v" firstAttribute="top" secondItem="m48-Ze-nr6" secondAttribute="top" id="qfh-Sm-ypp"/>
-                    <constraint firstAttribute="trailing" secondItem="FKz-cP-P3v" secondAttribute="trailing" id="tla-vj-8v4"/>
-                    <constraint firstAttribute="bottom" secondItem="M3R-Hu-spF" secondAttribute="bottom" id="uVl-I4-adN"/>
+                    <constraint firstItem="E18-WW-95K" firstAttribute="top" secondItem="m48-Ze-nr6" secondAttribute="top" id="Bot-uh-ixL"/>
+                    <constraint firstAttribute="bottom" secondItem="E18-WW-95K" secondAttribute="bottom" id="JuE-ad-lZE"/>
+                    <constraint firstAttribute="trailing" secondItem="poZ-Ut-SVr" secondAttribute="trailing" id="YDw-HE-Bn4"/>
+                    <constraint firstAttribute="trailing" secondItem="E18-WW-95K" secondAttribute="trailing" id="ctD-hN-xdK"/>
+                    <constraint firstAttribute="bottom" secondItem="poZ-Ut-SVr" secondAttribute="bottom" id="kUE-Qz-p3A"/>
+                    <constraint firstItem="poZ-Ut-SVr" firstAttribute="leading" secondItem="m48-Ze-nr6" secondAttribute="leading" id="miu-h5-hbg"/>
+                    <constraint firstItem="E18-WW-95K" firstAttribute="leading" secondItem="m48-Ze-nr6" secondAttribute="leading" id="vLc-xC-HMG"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="iconView" destination="FKz-cP-P3v" id="z6M-bQ-jEf"/>
-                <outlet property="titleLab" destination="yhK-wg-AZB" id="FlH-sS-DWy"/>
+                <outlet property="iconView" destination="E18-WW-95K" id="wfU-d3-Gdc"/>
+                <outlet property="titleLab" destination="Tvy-kP-tcR" id="h3T-xC-5Wk"/>
             </connections>
-            <point key="canvasLocation" x="724" y="228"/>
+            <point key="canvasLocation" x="360" y="139"/>
         </tableViewCell>
     </objects>
 </document>

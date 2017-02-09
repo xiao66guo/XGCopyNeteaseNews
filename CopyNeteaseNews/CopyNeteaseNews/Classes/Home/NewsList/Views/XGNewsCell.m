@@ -26,6 +26,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    self.autoresizesSubviews = NO;
     // Initialization code
 }
 

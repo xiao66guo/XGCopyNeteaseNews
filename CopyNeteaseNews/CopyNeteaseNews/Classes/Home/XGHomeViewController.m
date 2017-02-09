@@ -106,7 +106,7 @@ extern NSString *const XGNewsListSelectedDocidNotification;
 
 #pragma mark - 监听频道标签被点击的方法
 - (void)didSelectedIndex:(XGChannelView *)chaView {
-    NSLog(@"选中的标签是：%zd",chaView.selectedIndex);
+
     // 判断是否是当前选中的控制器，如果是就直接返回
     NSInteger idx = chaView.selectedIndex;
     if (_currentListV.channelIndex == idx) {
